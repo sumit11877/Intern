@@ -1,16 +1,16 @@
 // wait till the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Get reference to the button and the div
-    const jokeText = document.getElementById('joke-text');
-    const jokeBtn = document.getElementById('new-joke-btn');
+    const imageUrl = document.getElementById('cat-image');
+    const Btn = document.getElementById('submit');
 
     // fetch a joke from the API and display it
     async function fetchJoke(){
-        jokeBtn.disabled = true;
-        jokeText.textContent = 'Loading...';
+        Btn.disabled = true;
+        
         try {
             const response = await fetch(
-                'https://official-joke-api.appspot.com/random_joke'
+                'https://api.thecatapi.com/v1/images/search'
             );
 
             console.log('Response: ', response);
@@ -19,19 +19,22 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             const data = await response.json();
-            console.log('Joke Data', data);
-            jokeText.textContent = `${data.id} - ${data.setup} - ${data.punchline}`;
+            console.log('Image Data', data);
+            imageUrl.src = data[0].url;
+            console.log(data[0])
+            imageUrl.width= 500
+            imageUrl.height=500
+            
         } catch (error) {
-            jokeText.textContent = 'Failed to fetch joke. Please try again.';
             console.error('Error fetching joke:', error);
         }
 
-        jokeBtn.disabled = false;
+        Btn.disabled = false;
     }
 
     fetchJoke();
 
     // Add click event listener to the button
-    jokeBtn.addEventListener('click', fetchJoke);
+    Btn.addEventListener('click', fetchJoke);
 
 })
