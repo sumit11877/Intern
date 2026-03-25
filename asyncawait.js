@@ -23,3 +23,18 @@ getUserfromDB(2)
     .catch(err => {
         console.error('Error:', err.message);
     }); 
+
+
+    const fetchData = async (userid) => {
+        try {
+            const result = await getUserfromDB(userid);    
+            console.log('User found:', result);
+        } catch (err) {
+            console.error('Error:', err.message);
+        }       
+
+    };
+
+fetchData(2);
+fetchData(5);           
+
