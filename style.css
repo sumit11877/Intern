@@ -1,43 +1,14 @@
-header{
- background-color: antiquewhite;
- width: 10rem;
- height: 5rem;
-text-align: center;
-}
-nav{
-    background-color: brown;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
- ul{
-    display: flex;
-    gap: 3rem;
- }
- h1{
-    margin-right: 5rem;
- }
- main{
-   background-color: rgb(40, 56, 235);
-   display: flex;
-   height: 30rem;
- }
- footer{
-   background: #13c82e;
-   display: flex;
-   height: 5rem;
- }
- .my-custom-style {
-  width: 200px;   
-      /* Set the width */
-  border: 2px solid blue; /* Add a border */
-  border-radius: 8px;   
-  margin-top: 5rem;
+#firstdiv {
+  display: flex;
+  gap: 10rem;
+  background-color: red;
+  width: 90rem;
   align-items: center;
-  margin-left: 10rem;
 }
-.pa{
-   text-align: right;
-   font-size: large;
-   
+
+#topdiv{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
+
