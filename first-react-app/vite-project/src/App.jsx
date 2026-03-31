@@ -1,25 +1,89 @@
-import React from 'react'
-
+import { useEffect, useState } from "react";
 
 function App() {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [search, setSearch] = useState("");
+  const [page, setPage] = useState(0);
+
+  const limit = 10;
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+
+        const url = search
+          ? `https://dummyjson.com/products/search?q=${search}`
+          : `https://dummyjson.com/products?limit=${limit}&skip=${page * limit}`;
+
+        const res = await fetch(url);
+
+        if (!res.ok) {
+          throw new Error("Something went wrong");
+        }
+
+        const data = await res.json();
+        console.log(data)
+        setProducts(data.products);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, [search, page]);
+
   return (
-    <>
-      <div>
-      <h1>Project Logo</h1>
-      <ul>
-        <li>Home</li>
-      </ul>
+    <div style={{ padding: "20px" }}>
+      <h1>Product Store</h1>
+
+      {/* Search */}
+      <input
+        type="text"
+        placeholder="Search products..."
+        value={search}
+        onChange={(e) => {
+          setSearch(e.target.value);
+          setPage(0);
+        }}
+      />
+
+      {/* States */}
+      {loading && <p>The product are loading</p>}
+      {error && <p style={{ color: "red" }}>{error}</p>}
+
+      {/* Products */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: "10px" }}>
+        {products.map((p) => (
+          <div key={p.id} style={{ border: "1px solid #ccc", padding: "10px" }}>
+            <img src={p.thumbnail} alt={p.title} width="100%" />
+            <h3>{p.title}</h3>
+            <p>brand:{p.brand}</p>
+            <p>rating:{p.rating}</p>
+            <p>${p.price}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* Pagination */}
+      {!search && (
+        <div style={{ marginTop: "20px" }}>
+          <button onClick={() => setPage((p) => p - 1)} disabled={page === 0}>
+            Prev
+          </button>
+
+          <span> Page {page + 1} </span>
+
+          <button onClick={() => setPage((p) => p + 1)}>Next</button>
+        </div>
+      )}
     </div>
-      <div>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt doloribus sed omnis, repudiandae voluptate cupiditate culpa, rem maiores quia obcaecati placeat animi quae consequuntur iusto commodi odio asperiores eos fuga.</p>
-    </div>
-       <div>
-      <footer>
-        <p>Copyright 2024</p>
-      </footer>
-    </div>
-    </>
-  )
+  );
 }
 
-export default App
+export default App;
