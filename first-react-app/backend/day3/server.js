@@ -1,5 +1,8 @@
 const app = require('./app');
-const PORT = 8000;
+require('dotenv').config();
+
+const PORT = process.env.PORT
+
 
 
 app.listen(PORT, () => {
