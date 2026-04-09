@@ -1,21 +1,39 @@
-const shopName = 'Annapurna Momo House';
-let totalItems = 5;
-let pricePerItem = 80;
-let discount = 0.1;
- 
-function printReceipt(name, qty, price, disc) {
-  let total = qty * price;
-  let finalTotal = total - (total * disc);
-  console.log('Welcome to: ' + name);
-  console.log('Items: ' + qty + ' | Price each: Rs.' + price);
-  console.log('Subtotal: Rs.' + total);
-  console.log('After 10% discount: Rs.' + finalTotal);
-}
-printReceipt(shopName, totalItems, pricePerItem, discount);
- 
-function greetCustomer(customerName) {
-  if (customerName === undefined) { customerName = 'Valued Customer'; }
-  return 'Namaste, ' + customerName + '! Your order is ready.';
-}
-console.log(greetCustomer());
-console.log(greetCustomer('Rohan'));
+// Object
+const school = {
+    name: "Greenwood High",
+    location: "tanhaun",
+    Address: {
+        temporaryaddresh: "pokhara",
+        permanentaddresh: "tanhaun",
+        country: "nepal",
+    },
+    principal: "Dr. nishan",
+    Rank: 1,
+};
+console.log(school.Address.temporaryaddresh);
+
+// Array of objects
+const fruits = ["apple", "banana", "orange"];
+console .log(fruits[0]);
+
+const students = [
+    { id:1,name:'nishan malla', score : 85, city : 'tanhaun' },
+    { id:2,name:'sita thapa', score : 90, city : 'kathmandu' },
+    { id:3,name:'ram shrestha', score : 80, city : 'bharatpur' },
+];
+
+//functions
+const gettopstudent = (students) => {
+    let topstudent = students[0];
+    for (let s of students) {
+        if (s.score > topstudent.score) {
+            topstudent = s;
+        }
+    }
+    console.log(`Top student is ${topstudent.name} with score ${topstudent.score}`);
+};
+gettopstudent(students);
+
+
+
+    

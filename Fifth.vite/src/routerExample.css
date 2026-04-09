@@ -1,0 +1,99 @@
+.router-demo {
+  max-width: 960px;
+  margin: 48px auto;
+  padding: 32px 28px;
+  background: #0b1021;
+  color: #e5e7eb;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  border: 1px solid #1f2937;
+}
+
+.router-demo h1 {
+  font-size: 28px;
+  margin-bottom: 18px;
+  color: #c084fc;
+}
+
+.router-nav {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.router-nav a {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #334155;
+  color: #e2e8f0;
+  text-decoration: none;
+  background: linear-gradient(120deg, rgba(99, 102, 241, 0.22), rgba(14, 165, 233, 0.18));
+  transition: all 0.15s ease;
+}
+
+.router-nav a:hover {
+  border-color: #6366f1;
+  color: #ffffff;
+}
+
+.router-nav a.active {
+  background: #6366f1;
+  color: #f8fafc;
+  border-color: #6366f1;
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.35);
+}
+
+.page-card {
+  background: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 18px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.page-card h2 {
+  margin: 0 0 10px;
+  color: #a5b4fc;
+}
+
+.page-card p {
+  color: #cbd5e1;
+  margin: 0 0 8px;
+}
+
+.lesson-list {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 0;
+  display: grid;
+  gap: 10px;
+}
+
+.lesson-list a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  background: #0f172a;
+  border-radius: 12px;
+  color: #e2e8f0;
+  text-decoration: none;
+  border: 1px solid #1f2937;
+  transition: border-color 0.15s ease, transform 0.1s ease;
+}
+
+.lesson-list a:hover {
+  border-color: #38bdf8;
+  transform: translateY(-1px);
+}
+
+.lesson-list span {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+button {
+  cursor: pointer;
+}

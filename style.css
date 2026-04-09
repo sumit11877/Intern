@@ -1,14 +1,28 @@
-#firstdiv {
-  display: flex;
-  gap: 10rem;
-  background-color: red;
-  width: 90rem;
-  align-items: center;
+
+nav {
+    background-color: lightgray;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
 }
 
-#topdiv{
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+ul {
+    display: flex;
+    gap: 5rem;
 }
 
+
+main
+{
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+    margin-top: 2rem;
+    background-color: aqua;
+}
+
+footer{
+    display:flex;
+    justify-content: center;
+    background-color: lightgray;
+}

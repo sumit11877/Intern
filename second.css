@@ -1,0 +1,60 @@
+div{
+    background-color: crimson;
+    color: white;
+    font-size: 32px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.top{
+ background-color: green;
+ color: white;
+ font-size: 18px;
+}
+
+button{
+ background-color: orange;
+ font-size: 18px;
+}
+
+
+.odd{
+    background-color: pink
+}
+
+.num{
+    color: blue;   
+    background-color: none;
+}
+
+.w2{
+    background-color:black;
+    color: white;
+}
+
+.w1{
+    background-color: yellow;
+    color: black;
+}
+
+.firstdiv{
+    background-color: cyan;
+    color: black;
+}
+
+#firstdiv{
+    background-color: cyan;
+    color: black;
+    margin-right: 50rem;
+    
+}
+.main{
+    display: flex;
+}
+
+#a1{
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+}

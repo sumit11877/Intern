@@ -1,4 +1,1 @@
-# UrjaTech-Intern
-
-
-This is my first project
+# Intern
